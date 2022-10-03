@@ -28,7 +28,7 @@ pipeline {
         branch 'main'
 }
       steps {
-        sh 'oc login -u testuser -p redhat123'
+        sh 'oc login -u testuser -p redhat123 --insecure-skip-tls-verify=true --server=https://api.ocp4.example.com:6443'
         sh 'oc new-project test'
       }
     }
